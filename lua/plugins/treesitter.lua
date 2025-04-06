@@ -11,3 +11,6 @@ return {
     })
   end
 }
+
+
+-- better syntax highlighting, improved code folding

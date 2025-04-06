@@ -34,3 +34,5 @@ return {
     end,
   },
 }
+
+-- It enables features like code completion, diagnostics, go-to-definition, and refactoring by allowing Neovim to communicate with language-specific servers, providing IDE-like functionality
