@@ -14,6 +14,8 @@ config = function()
       width = 30,
       mappings = {
         ["<space>"] = "none", -- prevent accidental collapse
+        ["S"] = "open_split",     -- horizontal
+        ["s"] = "open_vsplit",    -- vertical
       },
     },
     filesystem = {
