@@ -1,32 +1,46 @@
 return {
-  "mfussenegger/nvim-dap",
-  dependencies = {
-    "rcarriga/nvim-dap-ui",
-    "nvim-neotest/nvim-nio",
-  },
-  config = function()
-    local dap = require("dap")
+	"mfussenegger/nvim-dap",
+	dependencies = {
+		"rcarriga/nvim-dap-ui",
+		"nvim-neotest/nvim-nio",
+	},
+	config = function()
+		local dap = require("dap")
 
-    local dapui = require("dapui")
+		local dapui = require("dapui")
 
-    require("dapui").setup()
-    dap.listeners.before.attach.dapui_config = function()
-      dapui.open()
-    end
-    dap.listeners.before.launch.dapui_config = function()
-      dapui.open()
-    end
-    dap.listeners.before.event_terminated.dapui_config = function()
-      dapui.close()
-    end
-    dap.listeners.before.event_exited.dapui_config = function()
-      dapui.close()
-    end
+		require("dapui").setup({
+			icons = { expanded = "▾", collapsed = "▸" },
+			layouts = {
+				{
+					elements = {
+						{ id = "scopes", size = 0.25 },
+						"breakpoints",
+						"stacks",
+						"watches",
+					},
+					size = 10, -- columns
+					position = "bottom",
+				},
+			},
+		})
+		dap.listeners.before.attach.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.launch.dapui_config = function()
+			dapui.open()
+		end
+		dap.listeners.before.event_terminated.dapui_config = function()
+			dapui.close()
+		end
+		dap.listeners.before.event_exited.dapui_config = function()
+			dapui.close()
+		end
 
-    -- keymap
-    vim.keymap.set("n", "<Leader>dt", function()
-      require("dap").toggle_breakpoint()
-    end)
-    vim.keymap.set("n", "<Leader>dc", dap.continue, {})
-  end,
+		-- keymap
+		vim.keymap.set("n", "<Leader>dt", function()
+			require("dap").toggle_breakpoint()
+		end)
+		vim.keymap.set("n", "<Leader>dc", dap.continue, {})
+	end,
 }
