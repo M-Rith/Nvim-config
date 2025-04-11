@@ -58,6 +58,8 @@ return {
         auto_open = false    -- if true this will open the outline automatically when it is first populated
       },
       lsp = {
+        enabled = true,
+        log_level = "debug",
         color = { -- show the derived colours for dart variables
           enabled = false, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
           background = false, -- highlight the background
@@ -66,6 +68,7 @@ return {
           virtual_text = true, -- show the highlight using virtual text
           virtual_text_str = "■", -- the virtual text character to highlight
         },
+
         --- OR you can specify a function to deactivate or change or control how the config is created
         capabilities = function(config)
           config.specificThingIDontWant = false
