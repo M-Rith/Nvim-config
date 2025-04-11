@@ -12,6 +12,6 @@ return {
 				},
 			},
 		})
-		vim.cmd("colorscheme nightfox") -- or "carbonfox", "nordfox", etc.
+		vim.cmd("colorscheme carbonfox") -- or "carbonfox", "nordfox", etc.
 	end,
 }
