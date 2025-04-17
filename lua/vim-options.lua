@@ -17,7 +17,8 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
-
+vim.keymap.set("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
+vim.keymap.set("v", "<leader>/", "gc", { remap = true, desc = "Comment selection" })
 -- Resizing
 vim.keymap.set("n", "<leader>=", "<C-w>=", { desc = "Equalize splits" })
 
