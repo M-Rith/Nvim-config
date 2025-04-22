@@ -3,7 +3,7 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    style = "night", -- "storm", "night", "moon", "day"
+    style = "moon", -- "storm", "night", "moon", "day"
     transparent = true,
     terminal_colors = true,
     styles = {
